@@ -1,0 +1,10 @@
+[virt-viewer]
+type=vnc
+title=td3-r205
+host=one-dell2
+port=12170
+proxy=http://one-frontend:29876?token=bl6xby2h93hpb71m8vst
+fullscreen=0
+toggle-fullscreen=shift+f11
+release-cursor=shift+f12
+secure-attention=ctrl+alt+end

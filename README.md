@@ -1,0 +1,35 @@
+# 1. Gestion des services : systemd
+- Consultation du manuel de la commande **systemctl** : `man systemctl` 
+- Affichage de la liste des services démarrés : `systemctl`
+- Installation du paquet **sshd** : `sudo apt-get install openssh-server` 
+- Vérification du démarrage du service **sshd** : `ssh 10.31.33.130`
+- Déconexion du **sshd** : `exit`
+- Arrêt du service **sshd** : `sudo systemctl stop ssh` 
+- Redémarrage du service **sshd** : `sudo systemctl start ssh` 
+
+# 2. Serveur Web Apache
+- Installation du paquet **apache2** : `sudo apt-get install apache2`
+- Vérification du bon démarrage du service **apache2** : `systemctl start apache2` 
+- Vérification du bon fonctionnement du serveur WEB en tapant `http://10.31.33.130`
+- Exploration du contenu du répertoire **/etc/apache2** :
+    - `cd /etc/apache2`
+    - `ls`
+- Fonctionnement de la configuration : `cat apache2.conf`
+- Manuel de la commande **a2enmod** : `man a2enmod`
+- Activation des pages d'accueil des utilisateurs à l'aide du module **userdir** : `sudo a2enmod userdir`
+- Redémarrage du service apache2 à l'aide de la commande **sytemctl**: `systemctl restart apache2`
+- Création du répertoire **public_html** dans le répertoire d’accueil de l'utilisateur **iut** : `sudo mkdir public-html`
+- Attribuer les droits d'accès à l'utilisateur du serveur WEB **www-data** pour lui permettre l'accès au **répertoire d’accueil** ainsi qu'au répertoire **public-html** : 
+    - **/** : 
+    - **public_html** : 
+- Affecter les droits par défaut au répertoire **public-html** : `sudo chmod 755 public_html`
+- Vérification du bon fonctionnement du serveur Web en tapant **http://10.31.33.130/~iut**.
+- Désactivation du listage des répertoires : 
+    - `cd etc/apache2/mods-available`
+    - `sudo nano userdir.conf`
+- Vérification de la désactivation du listages des répertoires en tapant **http://10.31.33.130/~iut**.
+- Création d'un fichier **bienvenue.html** dans le répertoire **public_html** : 
+    - `cd home/iut`
+    - `touch public_html/bienvenue.html`
+    - `sudo nano public_html/bienvenue.html`
+- Vérification du bon fonctionnement du serveur Web (**http://10.31.33.130/~iut/bienvenue.html**).

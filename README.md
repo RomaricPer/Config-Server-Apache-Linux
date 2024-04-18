@@ -103,7 +103,7 @@
 - Attribution des privilèges à l'utilisateur **admin** : `GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;` 
 - Quitter **mysql** : `exit`
 - Redémarrage du service **mysql** : `systemctl restart mysql` 
-- Teste du serveur : `mysqlshow -u admin -p`
+- Test du serveur : `mysqlshow -u admin -p`
 
 
 # 6. Outil d'administration de bases de données phpMyAdmin
@@ -113,7 +113,7 @@
 - Vérification de la présence du fichier de configuration pour apache :
     - `cd /etc/apache2/conf-enabled`
     - `ls`
-- Activation du module de gestion des chaine de caractères multi-octets de **php** : `sudo phpenmod mbstring`
+- Activation du module de gestion des chaines de caractères multi-octets de **php** : `sudo phpenmod mbstring`
 - Redémarrage du service **apache2** : `systemctl restart apache2`
 - Vérification de l'accès à la page : **http://10.31.33.130/phpmyadmin**
 
